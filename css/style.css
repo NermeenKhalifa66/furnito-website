@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('../assets/images/bg.jpg') no-repeat center center/cover;
+  backdrop-filter: brightness(0.9);
+}
+
+/* ======================== */
+.wrapper {
+  position: relative;
+  width: 750px;
+  height: 480px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #d4c8b0;
+}
+
+/* FORMS SIDE */
+.formLogin {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formLogin h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: #4e3b2c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.inputBox {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 12px 40px 12px 14px; /* padding-right عشان الآيكون */
+  border: 1px solid #d4c8b0;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fdfcfb;
+  color: #4e3b2c;
+}
+
+.inputBox i {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #b09a83;
+  pointer-events: none; /* ما يتضغطش عليه */
+}
+
+.inputBox {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputBox label {
+  font-size: 14px;
+  color: #6b5b4d;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d4c8b0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+  background-color: #fdfcfb;
+}
+
+.inputBox input:focus {
+  outline: none;
+  border-color: #c8a97e;
+}
+
+.inputBox i {
+  position: absolute;
+  right: 10px;
+  top: 38px;
+  font-size: 18px;
+  color: #b09a83;
+}
+
+/* BUTTON */
+.btn {
+  background-color: #a88f6b;
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #8d7554;
+}
+
+/* Link */
+.notHaveAcc {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+  color: #6e5c4f;
+}
+.notHaveAcc a {
+  color: #a88f6b;
+  text-decoration: none;
+  font-weight: 500;
+}
+.notHaveAcc a:hover {
+  text-decoration: underline;
+}
+
+/* INFO SIDE */
+.loginInfo {
+  width: 50%;
+  padding: 40px;
+  background: #f9f6f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginInfo h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #5a4a3d;
+  margin-bottom: 15px;
+}
+
+.loginInfo p {
+  font-size: 15px;
+  color: #6f6153;
+  line-height: 1.6;
+}
+
+/* Hide old animation background */
+.bg-animate,
+.bg-animate2 {
+  display: none !important;
+}
+.formLogin {
+  width: 50%;
+  padding: 40px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formLogin.activeForm {
+  display: flex; /* نظهر فقط الفورم النشط */
+}
+.formLogin,
+.loginInfo {
+  display: none;
+}
+
+.wrapper.active .formLogin.Register,
+.wrapper.active .loginInfo.Register {
+  display: flex;
+}
+
+.wrapper:not(.active) .formLogin.Login,
+.wrapper:not(.active) .loginInfo.Login {
+  display: flex;
+}
+
+
+/* Make responsive (optional) */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+
+  .formLogin,
+  .loginInfo {
+    width: 100%;
+  }
+}
